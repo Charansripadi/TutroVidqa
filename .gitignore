@@ -1,0 +1,9 @@
+# Local Netlify folder
+.netlify
+node_modules
+
+# ---- Safety: ignore everything in home repo by default ----
+*
+!/.gitignore
+!/TutorVidQA/
+!/TutorVidQA/**

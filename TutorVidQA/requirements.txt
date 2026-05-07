@@ -1,0 +1,10 @@
+opencv-python
+openai-whisper
+transformers
+faiss-cpu
+torch
+yt-dlp
+langchain
+pillow
+numpy
+sentencepiece
