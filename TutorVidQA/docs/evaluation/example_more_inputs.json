@@ -1,0 +1,66 @@
+{
+  "pr_curve": {
+    "precision": [
+      0.78,
+      0.82,
+      0.85,
+      0.86,
+      0.87,
+      0.87,
+      0.88,
+      0.88,
+      0.88,
+      0.89
+    ],
+    "recall": [
+      0.45,
+      0.6,
+      0.72,
+      0.78,
+      0.82,
+      0.84,
+      0.86,
+      0.87,
+      0.88,
+      0.89
+    ]
+  },
+  "latency_breakdown": {
+    "segment": 0.2,
+    "whisper": 8.3,
+    "embed": 1.1,
+    "index": 0.15,
+    "retrieve": 0.08
+  },
+  "ablation": {
+    "text-only": 0.84,
+    "image-only": 0.61,
+    "text+image": 0.87
+  },
+  "qualitative_examples": [
+    {
+      "question": "What is Retrieval-Augmented Generation?",
+      "gt": "120s\u2013180s (seg 2)",
+      "retrieved": "118s\u2013178s (seg 2)",
+      "snippet": "Retrieval-Augmented Generation combines retrieval systems with language models..."
+    },
+    {
+      "question": "When does the instructor introduce vector databases?",
+      "gt": "300s\u2013360s (seg 5)",
+      "retrieved": "240s\u2013300s (seg 4) (miss)",
+      "snippet": "We will store embeddings in FAISS and run similarity search to fetch relevant context..."
+    },
+    {
+      "question": "Define precision and recall.",
+      "gt": "\u2014",
+      "retrieved": "\u2014",
+      "snippet": "\u2014"
+    },
+    {
+      "question": "Explain CLIP embeddings.",
+      "gt": "\u2014",
+      "retrieved": "\u2014",
+      "snippet": "\u2014"
+    }
+  ]
+}

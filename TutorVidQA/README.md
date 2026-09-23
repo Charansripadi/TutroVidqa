@@ -10,6 +10,16 @@ This repository is suitable for:
 
 ## Architecture (dataset pipeline)
 
+Rendered diagrams (PNG) for reports/slides:
+
+- `docs/architecture/architecture_overview.png`
+- `docs/architecture/retrieval_flow.png`
+- `docs/architecture/dataset_artifact_flow.png`
+- Captions/descriptions: `docs/FIGURES.md`
+
+![TutorVidQA architecture](docs/architecture/architecture_overview.png)
+![Dataset artifacts flow](docs/architecture/dataset_artifact_flow.png)
+
 ```mermaid
 flowchart LR
   A[YouTube URL] -->|yt-dlp| B[datasets/raw_videos/*.mp4]
@@ -22,6 +32,13 @@ flowchart LR
   G -->|build_faiss_index.py| H
   E -->|create_qa_pairs.py| I[datasets/annotations/qa_pairs.jsonl]
   H -->|qa_pipeline.py| J[retrieved segments + grounded answer stub]
+```
+
+To regenerate the PNGs:
+
+```bash
+python3 scripts/render_architecture_images.py
+python3 scripts/render_more_report_images.py
 ```
 
 ## Folder structure
@@ -118,6 +135,36 @@ Dataset stats (JSON):
 
 Retrieved segments (demo):
 - segment id, score, timestamp window, and grounding text snippet
+
+## Evaluation (images)
+
+Rendered evaluation plots (PNG):
+
+- `docs/evaluation/metrics_bar.png`
+- `docs/evaluation/latency.png`
+- `docs/evaluation/confusion_matrix.png`
+- `docs/evaluation/pr_at_k.png`
+- `docs/evaluation/pr_curves.png`
+- `docs/evaluation/latency_breakdown.png`
+- `docs/evaluation/ablation.png`
+- `docs/evaluation/qualitative_examples.png`
+- Captions/descriptions: `docs/FIGURES.md`
+
+![Evaluation metrics](docs/evaluation/metrics_bar.png)
+![Evaluation matrix](docs/evaluation/confusion_matrix.png)
+![Precision/Recall@K](docs/evaluation/pr_at_k.png)
+![Precision/Recall curves](docs/evaluation/pr_curves.png)
+![Latency breakdown](docs/evaluation/latency_breakdown.png)
+![Ablation](docs/evaluation/ablation.png)
+![Qualitative examples](docs/evaluation/qualitative_examples.png)
+
+To regenerate:
+
+```bash
+python3 scripts/render_evaluation_images.py
+python3 scripts/render_evaluation_matrix.py
+python3 scripts/render_more_report_images.py
+```
 
 ## EduVidQA benchmark support (proposed)
 
